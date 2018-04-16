@@ -10,9 +10,12 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'majutsushi/tagbar'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -31,7 +34,7 @@ set autoread
 set clipboard=unnamed                                        " yank and paste with the system clipboard
 set directory-=.                                             " dont store swapfiles in the current directory
 set encoding=utf-8
-set hlsearch
+"set hlsearch
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
 set laststatus=2                                             " always show statusline
@@ -119,6 +122,14 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
+map <Leader>mu :CtrlPMRU<CR>
+
+" ctrlp-funky
+nnoremap <Leader>fu :CtrlPFunky<CR>
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<CR>
+let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_extensions             = ['funky']
+
 
 " nerdtree
 noremap <F4> :NERDTreeToggle<CR>
@@ -152,3 +163,7 @@ set foldlevel=99
 
 " SimpylFold
 let g:SimpylFold_docstring_perview=1
+
+" gitgutter
+let g:gitgutter_diff_args = '-w'
+
