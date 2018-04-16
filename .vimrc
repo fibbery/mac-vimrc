@@ -1,0 +1,1 @@
+/Users/fibbery/.vimrc
