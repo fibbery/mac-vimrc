@@ -16,6 +16,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()
 filetype plugin indent on
 
