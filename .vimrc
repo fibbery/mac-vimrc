@@ -21,6 +21,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Chiel92/vim-autoformat'
 call vundle#end()
 filetype plugin indent on
 
@@ -81,7 +82,7 @@ nnoremap <Leader>y <C-y>
 
 " airline
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
 let g:airline_theme='bubblegum'
 let g:Powerline_symbols='fancy'
@@ -95,17 +96,17 @@ let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnametruncate = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline#extensions#default#section_truncate_width = {
-	  \ 'b': 79,
-	  \ 'x': 60,
-	  \ 'y': 88,
-	  \ 'z': 45,
-	  \ 'warning': 80,
-	  \ 'error': 80,
-	  \ }
+	    \ 'b': 79,
+	    \ 'x': 60,
+	    \ 'y': 88,
+	    \ 'z': 45,
+	    \ 'warning': 80,
+	    \ 'error': 80,
+	    \ }
 let g:airline#extensions#default#layout = [
-	  \ [ 'a', 'error', 'warning', 'b', 'c' ],
-	  \ [ 'x', 'y', 'z' ]
-	  \ ]
+	    \ [ 'a', 'error', 'warning', 'b', 'c' ],
+	    \ [ 'x', 'y', 'z' ]
+	    \ ]
 " Distinct background color is enough to discriminate the warning and
 " error information.
 let g:airline#extensions#ale#error_symbol = '•'
@@ -118,9 +119,9 @@ nnoremap <Leader>bp :bp<CR>
 let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
-    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
-    \ }
+	    \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
+	    \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
+	    \ }
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_match_window_bottom=1
 let g:ctrlp_max_height=15
@@ -200,5 +201,5 @@ let g:indentLine_enabled = 1
 " autopep8
 let g:autopep8_disable_show_diff =1
 
- "nerdcomment
-map <F4> <leader>ci <CR>
+"nerdcomment
+map <leader>ci <CR>
