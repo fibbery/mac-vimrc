@@ -22,6 +22,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'easymotion/vim-easymotion'
 call vundle#end()
 filetype plugin indent on
 
