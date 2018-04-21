@@ -23,6 +23,7 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'mikelue/vim-maven-plugin'
 call vundle#end()
 filetype plugin indent on
 
@@ -188,7 +189,7 @@ let g:ycm_cache_omnifuc                                  = 0
 let g:ycm_complete_in_strings                            = 1
 autocmd InsertLeave * if pumvisible ()                 == 0 | pclose | endif
 "回车即选中当前项
-inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
+"inoremap <expr> <CR>       pumvisible() ? '<C-y>' : '\<CR>'
 "上下左右键行为
 inoremap <expr> <Down>     pumvisible() ? '\<C-n>' : '\<Down>'
 inoremap <expr> <Up>       pumvisible() ? '\<C-p>' : '\<Up>'
