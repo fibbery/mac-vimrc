@@ -24,6 +24,10 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'mikelue/vim-maven-plugin'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -79,8 +83,6 @@ nnoremap <Leader>d <C-d>
 nnoremap <Leader>u <C-u>
 nnoremap <Leader>f <C-f>
 nnoremap <Leader>b <C-b>
-nnoremap <Leader>e <C-e>
-nnoremap <Leader>y <C-y>
 
 " airline
 if !exists('g:airline_symbols')
