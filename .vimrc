@@ -1,47 +1,59 @@
 syntax enable
 " configure vundle
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'majutsushi/tagbar'
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plugin 'junegunn/fzf.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tell-k/vim-autopep8'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'mikelue/vim-maven-plugin'
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'morhetz/gruvbox'
+Plug 'aonemd/kuroi.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/vim-easy-align'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
+Plug 'majutsushi/tagbar'
+Plug 'tmhedberg/SimpylFold'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tell-k/vim-autopep8'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Chiel92/vim-autoformat'
+Plug 'easymotion/vim-easymotion'
+Plug 'mikelue/vim-maven-plugin'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+Plug 'suan/vim-instant-markdown'
+Plug 'fatih/vim-go'
+Plug 'flazz/vim-colorschemes'
+Plug 'liuchengxu/space-vim-dark'
+Plug 'Valloric/YouCompleteMe'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 "----------colorscheme-------
-colorscheme gruvbox
-set bg=dark
-set guioptions=
+colorscheme space-vim-dark
+hi Comment    cterm   = italic
+hi Normal     ctermbg = NONE guibg=NONE
+hi LineNr     ctermbg = NONE guibg=NONE
+hi SignColumn ctermbg = NONE guibg=NONE
+hi Comment guifg=#5C6370 ctermfg=59
+let g:space_vim_dark_background = 234
+set termguicolors
 syntax on
 
 " ----------basic configure--------
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab smarttab
+set autoindent
 set relativenumber
 set number
 set linespace=2
-set autoindent
 set autoread
 set clipboard=unnamed                                        " yank and paste with the system clipboard
 set directory-=.                                             " dont store swapfiles in the current directory
@@ -57,9 +69,6 @@ set scrolloff=3
 set shiftwidth=2
 set showcmd
 set smartcase
-set softtabstop=4
-set tabstop=8
-set shiftwidth=4
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc " tab ignore file under this dirctory
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
@@ -202,8 +211,23 @@ inoremap <expr> <PageUp>   pumvisible() ? '\<PageUp>\<C-p>\<C-n>' : '\<PageUp>'
 let g:indentLine_char='┆'
 let g:indentLine_enabled = 1
 
+
 " autopep8
 let g:autopep8_disable_show_diff =1
 
 "nerdcomment
 map <leader>ci <CR>
+
+" go
+let g:go_fmt_command = "goimports"
+au FileType go nmap <Leader>gs <Plug>(go-implements)
+au FileType go nmap <Leader>gp <Plug>(go-info)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gb <Plug>(go-build)
+au FileType go nmap <leader>gt <Plug>(go-test)
+au FileType go nmap <leader>gc <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>gdv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>gdt <Plug>(go-def-tab)
+au FileType go nmap <Leader>ge <Plug>(go-rename)
+
