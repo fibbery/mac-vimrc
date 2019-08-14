@@ -30,6 +30,7 @@ Plug 'fatih/vim-go'
 Plug 'flazz/vim-colorschemes'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'Valloric/YouCompleteMe'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 filetype plugin indent on
@@ -62,11 +63,10 @@ set encoding=utf-8
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
 set laststatus=2                                             " always show statusline
-set list                                                     " show trailing whitespace
+"set list                                                     " show trailing whitespace
 set listchars=tab:▸\ ,trail:◆
 set ruler
 set scrolloff=3
-set shiftwidth=2
 set showcmd
 set smartcase
 set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc " tab ignore file under this dirctory
@@ -188,10 +188,10 @@ let g:gitgutter_diff_args = '-w'
 
 " YouCompeteMe
 let g:ycm_global_ycm_extra_conf                          = '~/ycm_extra_conf.py' " 默认配置文件路径
-let g:ycm_confirm_extra_conf                             = 0                     " 打开vim时不在询问是否加载ycm_extra_conf.py配置
+let g:ycm_confirm_extra_conf                             = 0                     " 打开vim时不再询问是否加载ycm_extra_conf.py配置
 set completeopt                                          =longest,menu
-let g:ycm_path_python_interpreter                        = '/usr/local/bin/python3'
-let g:ycm_seed_identifiers_with_syntax                   = 1                     " 是否开启语义不全
+let g:ycm_path_python_interpreter                        = '/usr/local/bin/python3.7'
+let g:ycm_seed_identifiers_with_syntax                   = 1                     " 是否开\是否开启语义不全
 let g:ycm_complete_in_comments                           = 1                     " 是否在注释中也开启补全
 let g:ycm_collect_identifiers_from_comments_and_strings  = 0
 let g:ycm_min_num_of_chars_for_completion                = 2                     " 开始补全的字符
@@ -220,8 +220,9 @@ map <leader>ci <CR>
 
 " go
 let g:go_fmt_command = "goimports"
-au FileType go nmap <Leader>gs <Plug>(go-implements)
-au FileType go nmap <Leader>gp <Plug>(go-info)
+let g:go_auto_type_info=1
+au FileType go nmap <Leader>go <Plug>(go-implements)
+au FileType go nmap <Leader>gi <Plug>(go-info)
 au FileType go nmap <leader>gr <Plug>(go-run)
 au FileType go nmap <leader>gb <Plug>(go-build)
 au FileType go nmap <leader>gt <Plug>(go-test)
@@ -230,4 +231,8 @@ au FileType go nmap <Leader>ds <Plug>(go-def-split)
 au FileType go nmap <Leader>gdv <Plug>(go-def-vertical)
 au FileType go nmap <Leader>gdt <Plug>(go-def-tab)
 au FileType go nmap <Leader>ge <Plug>(go-rename)
+au FileType go nmap <Leader>r :!go run %<CR>
+au FileType go nmap <Leader>b :!go build %<CR>
+au FileType go nmap <Leader>t :!go test %<CR>
+
 
