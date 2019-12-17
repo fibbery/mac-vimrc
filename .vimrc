@@ -235,4 +235,7 @@ au FileType go nmap <Leader>r :!go run %<CR>
 au FileType go nmap <Leader>b :!go build %<CR>
 au FileType go nmap <Leader>t :!go test %<CR>
 
+" json
+autocmd Filetype json :IndentLinesDisable
+
 
